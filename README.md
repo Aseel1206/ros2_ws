@@ -214,7 +214,7 @@ ros2 topic echo /mavros/state
 
 # Start ROS2 Node for Drone
 
-Before starting node ensure SITL and mavros node are working. (follow the above steps)
+Before starting node ensure SITL and mavros node are working. (follow the above steps) (Terminal 3)
 
 ```shell
 cd ros2_ws
