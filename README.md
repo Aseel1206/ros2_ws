@@ -1,2 +1,2 @@
-# ros2_ws
+# ROS2 Workspace
 # ros2_ws
