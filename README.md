@@ -177,3 +177,48 @@ source install/setup.bash
 ros2 run drone_ros demo_no #ros2 run <pkg-name> <node-name>
 ```
 Everytime changes are mode follow above steps to run node again , i.e. build  -> source -> run
+
+# Install Mavros 
+!!!(Follow this even if you have cloned repo)
+
+```shell
+sudo apt update
+sudo apt install -y python3-pip
+pip3 install empy
+```
+```shell
+sudo apt-get install ros-jazzy-mavros ros-jazzy-mavros-extras
+wget https://raw.githubusercontent.com/mavlink/mavros/master/mavros/scripts/install_geographiclib_datasets.sh
+chmod a+x install_geographiclib_datasets.sh
+./install_geographiclib_datasets.sh
+```
+
+# Connect Mavros to Sitl
+
+Step 1: Start SITL (Terminal 1)
+
+```shell
+cd ardupilot
+cd ArduCopter
+../Tools/autotest/sim_vehicle.py --map --console --out=udp:127.0.0.1:14540 -l 38.3138564,-76.5446395,0,90
+```
+
+Step 2: Start Mavros (Terminal 2)
+```shell
+ros2 run mavros mavros_node --ros-args -p fcu_url:=udp://:14540@172.17.160.1:14557
+```
+Step 3: Check if Mavros is connected (Terminal 3)
+```shell
+ros2 topic echo /mavros/state
+```
+
+# Start ROS2 Node for Drone
+
+Before starting node ensure SITL and mavros node are working. (follow the above steps)
+
+```shell
+cd ros2_ws
+colcon build
+source install/setup.bash
+ros2 run drone_ros waypoint_node #ros2 run <pkg-name> <node-name>
+```
