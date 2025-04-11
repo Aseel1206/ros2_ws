@@ -1,4 +1,4 @@
-# ROS2 Workspace
+# ROS2
 
 This Workspace contains package to communicate SITL through Mavros2. Follow the bellow instructions to setup and run nodes.
 
