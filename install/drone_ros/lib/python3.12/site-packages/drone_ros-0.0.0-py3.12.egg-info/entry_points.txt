@@ -1,0 +1,7 @@
+[console_scripts]
+drone_node = drone_ros.drone_node:main
+mission_upload = drone_ros.mission_upload:main
+publisher_node = drone_ros.publisher_node:main
+subscriber_node = drone_ros.subscriber_node:main
+waypoint_monitor = drone_ros.waypoint_monitor:main
+waypoint_node = drone_ros.waypoint_node:main

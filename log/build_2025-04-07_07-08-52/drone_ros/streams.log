@@ -1,0 +1,28 @@
+[1.028s] Invoking command in '/home/aseel/ros2_ws/src/drone_ros': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PS1=(venv-ardupilot) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ PYTHONPATH=/home/aseel/ros2_ws/build/drone_ros/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/aseel/ros2_ws/install/drone_ros/lib/python3.12/site-packages:${PYTHONPATH} VIRTUAL_ENV_PROMPT=(venv-ardupilot) /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/drone_ros build --build-base /home/aseel/ros2_ws/build/drone_ros/build install --record /home/aseel/ros2_ws/build/drone_ros/install.log --single-version-externally-managed install_data
+[1.355s] running egg_info
+[1.381s] writing ../../build/drone_ros/drone_ros.egg-info/PKG-INFO
+[1.381s] writing dependency_links to ../../build/drone_ros/drone_ros.egg-info/dependency_links.txt
+[1.382s] writing entry points to ../../build/drone_ros/drone_ros.egg-info/entry_points.txt
+[1.383s] writing requirements to ../../build/drone_ros/drone_ros.egg-info/requires.txt
+[1.383s] writing top-level names to ../../build/drone_ros/drone_ros.egg-info/top_level.txt
+[1.450s] reading manifest file '../../build/drone_ros/drone_ros.egg-info/SOURCES.txt'
+[1.452s] writing manifest file '../../build/drone_ros/drone_ros.egg-info/SOURCES.txt'
+[1.452s] running build
+[1.454s] running build_py
+[1.457s] copying drone_ros/mission_upload.py -> /home/aseel/ros2_ws/build/drone_ros/build/lib/drone_ros
+[1.457s] running install
+[1.464s] running install_lib
+[1.494s] copying /home/aseel/ros2_ws/build/drone_ros/build/lib/drone_ros/mission_upload.py -> /home/aseel/ros2_ws/install/drone_ros/lib/python3.12/site-packages/drone_ros
+[1.495s] byte-compiling /home/aseel/ros2_ws/install/drone_ros/lib/python3.12/site-packages/drone_ros/mission_upload.py to mission_upload.cpython-312.pyc
+[1.496s] running install_data
+[1.496s] running install_egg_info
+[1.538s] removing '/home/aseel/ros2_ws/install/drone_ros/lib/python3.12/site-packages/drone_ros-0.0.0-py3.12.egg-info' (and everything under it)
+[1.538s] Copying ../../build/drone_ros/drone_ros.egg-info to /home/aseel/ros2_ws/install/drone_ros/lib/python3.12/site-packages/drone_ros-0.0.0-py3.12.egg-info
+[1.539s] running install_scripts
+[1.733s] Installing drone_node script to /home/aseel/ros2_ws/install/drone_ros/lib/drone_ros
+[1.734s] Installing mission_upload script to /home/aseel/ros2_ws/install/drone_ros/lib/drone_ros
+[1.738s] Installing publisher_node script to /home/aseel/ros2_ws/install/drone_ros/lib/drone_ros
+[1.738s] Installing subscriber_node script to /home/aseel/ros2_ws/install/drone_ros/lib/drone_ros
+[1.738s] Installing waypoint_node script to /home/aseel/ros2_ws/install/drone_ros/lib/drone_ros
+[1.739s] writing list of installed files to '/home/aseel/ros2_ws/build/drone_ros/install.log'
+[1.803s] Invoked command in '/home/aseel/ros2_ws/src/drone_ros' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PS1=(venv-ardupilot) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ PYTHONPATH=/home/aseel/ros2_ws/build/drone_ros/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/aseel/ros2_ws/install/drone_ros/lib/python3.12/site-packages:${PYTHONPATH} VIRTUAL_ENV_PROMPT=(venv-ardupilot) /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/drone_ros build --build-base /home/aseel/ros2_ws/build/drone_ros/build install --record /home/aseel/ros2_ws/build/drone_ros/install.log --single-version-externally-managed install_data
