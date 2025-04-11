@@ -59,3 +59,121 @@ Terminal 2:
 source /opt/ros/jazzy/setup.bash
 ros2 run demo_nodes_py listener
 ```
+
+# Create ROS2 WorkSpace 
+
+Install Colcon for Auto Build (necessary even if cloning repo)
+
+```shell
+sudo apt install python3-colcon-common-extensions
+```
+```shell
+cd /usr/share/colcon_argcomplete/hook/
+gedit ~/.bashrc
+```
+Then add ```source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash``` to the bash script.
+```shell
+source ~/.bashrc
+```
+!!! Dont follow the below step if cloning the repo
+
+```shell
+mkdir ros2_ws #package name
+cd ros2_ws/
+mkdir src
+colcon build
+cd
+source ~/ros2_ws/install/setup.bash
+gedit .bashrc
+```
+Then add ```source ~/ros2_ws/install/setup.bash``` to the bash script. (After cloning repo also add this)
+
+
+# Create ROS2 Package
+!!!(Skip this if you cloning the repo and want to use same pkg)
+```shell
+cd ros2_ws/
+cd src/
+ros2 pkg create drone_ros --build-type ament_python --dependencies rclpy
+sudo snap install code --classic #skip if vs code already installed
+code . #to open project in vs code
+```
+
+In Other terminal: (run the below commands even if cloned)
+
+```shell
+cd ros2_ws
+colcon build
+cd install/
+```
+
+# Create Node
+Follow these steps to create new nodes
+```shell
+cd ros2_ws/
+cd src/
+cd drone_ros/
+cd drone_ros/
+touch node_name.py
+chmod +x node_name.py
+cd ../..
+```
+
+```code .  #to open vs code```
+
+# Writing and running nodes
+
+In the VS Code open an example node like demo_node and add the following:
+
+```python
+#!/usr/bin/env python3
+import rclpy
+from rclpy.node import Node
+class DroneNode(Node):
+    def __init__(self):
+        super().__init__("first_node")
+        self.get_logger().info("Hello Ros2")
+
+def main(args=None):
+    rclpy.init(args=args)
+    node = DroneNode()
+    rclpy.spin(node)
+
+    rclpy.shutdown()
+
+if __name__ == '__main__':
+    main()
+```
+
+To add dependency:
+
+open package.xml and add:
+```xml
+ <depend>mavros_msgs</depend>
+  <depend>exif</depend>
+  <depend>piexif</depend>
+  <depend>PIL</depend> #and other dependency
+```
+To create node available to all :
+open setup.py
+Add like below:
+```python
+ entry_points={
+        'console_scripts': [
+            'drone_node = drone_ros.drone_node:main',
+            'publisher_node = drone_ros.publisher_node:main',
+            'subscriber_node = drone_ros.subscriber_node:main',
+            'waypoint_node = drone_ros.waypoint_node:main',
+            'mission_upload = drone_ros.mission_upload:main',
+            'waypoint_monitor = drone_ros.waypoint_monitor:main',
+        ],
+```
+Now open new terminal and follow below steps to run node:
+
+```shell
+cd ros2_ws
+colcon build
+source install/setup.bash
+ros2 run drone_ros demo_no #ros2 run <pkg-name> <node-name>
+```
+Everytime changes are mode follow above steps to run node again , i.e. build  -> source -> run
