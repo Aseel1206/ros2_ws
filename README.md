@@ -179,7 +179,7 @@ ros2 run drone_ros demo_no #ros2 run <pkg-name> <node-name>
 Everytime changes are mode follow above steps to run node again , i.e. build  -> source -> run
 
 # Install Mavros 
-!!!(Follow this even if you have cloned repo)
+!!!(Follow this even if you have cloned repo and mavros not installed)
 
 ```shell
 sudo apt update
